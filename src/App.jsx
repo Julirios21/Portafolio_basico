@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
-import Contact from './components/Contact'
 import ThemeToggle from './components/ThemeToggle'
 
 function App() {
@@ -20,7 +19,6 @@ function App() {
       <Hero />
       <Projects />
       <Skills />
-      <Contact />
     </>
   )
 }

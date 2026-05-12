@@ -1,11 +1,18 @@
 function ProjectCard({ project }) {
-  const cardContent = (
-    <div className="card" style={{
-      borderRadius: '15px',
-      boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
-      overflow: 'hidden',
-      cursor: project.link ? 'pointer' : 'default'
-    }}>
+  const handleClick = () => {
+    if (project.link) {
+      window.open(project.link, '_blank', 'noopener')
+    }
+  }
+
+  return (
+    <div className="card project-card-link" onClick={handleClick}
+      style={{
+        borderRadius: '15px',
+        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
+        overflow: 'hidden',
+        cursor: project.link ? 'pointer' : 'default'
+      }}>
       {project.image ? (
         <img src={project.image} alt={project.title} className="card-img-top"
           style={{ height: '200px', objectFit: 'cover' }} />
@@ -21,37 +28,23 @@ function ProjectCard({ project }) {
           {project.description}
         </p>
         {project.link && (
-          <a href={project.link} target="_blank" rel="noopener noreferrer"
-            className="btn btn-primary mt-3"
+          <span className="btn btn-primary mt-3"
             style={{ borderRadius: '20px', padding: '8px 16px', fontSize: '14px' }}
-            onClick={(e) => e.stopPropagation()}>
+            onClick={(e) => { e.stopPropagation(); handleClick() }}>
             Ver más
-          </a>
+          </span>
         )}
-        <ul style={{ listStyle: 'none', padding: 0, marginTop: '15px' }}>
+        <div style={{ marginTop: '15px', width: '100%' }}>
           <h6 style={{ marginBottom: '10px', color: '#34495e' }}>Tecnologías</h6>
-          {project.technologies.map((tech, i) => (
-            <li key={i} style={{
-              background: '#ecf0f1',
-              padding: '5px 12px',
-              borderRadius: '8px',
-              marginBottom: i < project.technologies.length - 1 ? '5px' : '0'
-            }}>{tech}</li>
-          ))}
-        </ul>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', justifyContent: 'center' }}>
+            {project.technologies.map((tech, i) => (
+              <span key={i} className="tech-tag">{tech}</span>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   )
-
-  if (project.link) {
-    return (
-      <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-card-link">
-        {cardContent}
-      </a>
-    )
-  }
-
-  return cardContent
 }
 
 export default ProjectCard

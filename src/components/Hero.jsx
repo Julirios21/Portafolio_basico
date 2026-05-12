@@ -1,9 +1,14 @@
+import heroImg from '../assets/image.jpg'
+
 function Hero() {
   return (
-    <section className="about">
+    <section className="about" style={{ backgroundImage: `url(${heroImg})` }}>
       <div>
-        <h1>Julian Rios</h1>
-        <p>Ingeniero de sistemas</p>
+        <h1>Julian Rios Rodriguez</h1>
+        <p>Desarrollador de software</p>
+        <a href="/cv.pdf" download className="btn-cv">
+          <i className="fas fa-download"></i> Descargar CV
+        </a>
       </div>
     </section>
   )
