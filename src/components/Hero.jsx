@@ -6,7 +6,7 @@ function Hero() {
       <div>
         <h1>Julian Rios Rodriguez</h1>
         <p>Desarrollador de software</p>
-        <a href="/cv.pdf" download className="btn-cv">
+        <a href="/CV_Julian_Rios.pdf" download className="btn-cv">
           <i className="fas fa-download"></i> Descargar CV
         </a>
       </div>
