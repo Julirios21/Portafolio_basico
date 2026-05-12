@@ -1,0 +1,125 @@
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.about {
+  height: 100vh;
+  background: url("/Imagenes/image.jpg") no-repeat center center/cover;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.about h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  margin-bottom: 0.5rem;
+}
+
+.about p {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 2rem;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.projects .card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .card {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .card-title {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .card-text {
+  color: #b0b0b0 !important;
+}
+
+body.dark-mode .projects .card h6 {
+  color: #c0c0c0 !important;
+}
+
+body.dark-mode .projects .card li {
+  background: #333 !important;
+  color: #ccc;
+}
+
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.project-card-link:hover .card {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skills .icon-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.skills .icon-container .icon {
+  font-size: 4rem;
+  color: #007bff;
+  transition: color 0.3s;
+}
+
+body.dark-mode .skills .icon-container .icon {
+  color: #ffcc00;
+}
+
+body.dark-mode .skills {
+  background-color: #1a1a1a !important;
+}
+
+.skills .icon-container .icon:hover {
+  color: #0056b3;
+}
+
+.contact form {
+  max-width: 600px;
+  margin: auto;
+}
